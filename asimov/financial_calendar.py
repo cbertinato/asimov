@@ -1,6 +1,6 @@
 from pandas.tseries.holiday import (AbstractHolidayCalendar, Holiday, nearest_workday, USMartinLutherKingJr,
                                     USPresidentsDay, GoodFriday, USMemorialDay, USLaborDay, USThanksgivingDay)
-from pandas.tseries.offsets import CustomBusinessHour
+from pandas.tseries.offsets import CustomBusinessHour, CustomBusinessDay
 
 
 # TODO: Check for behavior on Dec 31
@@ -19,3 +19,4 @@ class USTradingCalendar(AbstractHolidayCalendar):
 
 
 trading_hours_us = CustomBusinessHour(start='09:30', end='16:30', calendar=USTradingCalendar())
+trading_day_us = CustomBusinessDay(calendar=USTradingCalendar())
